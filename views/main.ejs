@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAIN PAGE</title>
+    <script src="https://kit.fontawesome.com/ff5c387f12.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Lato:ital,wght@0,300;0,400;1,300;1,400;1,700;1,900&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body{
+            padding: 0px;
+            margin: 0px;
+            scroll-behavior: smooth;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 3px;
+            background-image: url("https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .header{
+            background-color: #1B609D;
+            width: 100%;
+            height: 12vh;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            color: aliceblue;
+        }
+        h1{
+            font-weight: 700 bold;
+            font-style: italic;
+            font-size: 7vh;
+        }
+        .content{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .class1{
+            background-color: rgba(255, 255, 255,0.5);
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 88vh;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        .class2{
+            /* background-color: rgb(78, 74, 74); */
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 88vh;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        button{
+            border:2px solid #1B609D;
+            height: 6vh;
+            width: 25vh;
+            font-size: 20px;
+            border-radius: 7px;
+            color: #1B609D;
+        }
+        #student:hover{
+           
+            background-color: #1B609D;
+            color:white;
+        }
+        #faculty:hover{
+            
+            background-color: #1B609D;
+            color:white;
+        }
+        /* .class1:hover{
+            background-color:  rgba(255, 255, 255,0.2);
+        }
+        .class2:hover{
+            background-color: rgba(255, 255, 255,0.5);
+        } */
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 id="heading" >&nbsp;&nbsp;Smart Notice Board</h1>
+        <h2>Vishnu Institute of Technology&nbsp;&nbsp;</h2>
+    </div>
+    <div class="content">
+        <div class="class1">
+            <form method="get" action="/faculty">
+                <i class='fas fa-chalkboard-teacher' style='font-size:15vh'></i><br/><button id="faculty">Faculty</button><br/>
+            </form>
+        </div> 
+        <div class="class2">
+            <form method="get" action="/student">
+                <i class='fas fa-user-graduate' style='font-size:15vh'></i><br/><button id="student">Student</button></div>
+            </form>
+    </div>
+    <!-- <script>
+        document.getElementById("faculty").addEventListener("click",faculty);
+        document.getElementById("student").addEventListener("click",student);
+        function faculty(){
+            location.href="facultyLogin.ejs";
+        }
+        function student(){
+            location.href="studentLogin.ejs";
+        }
+    </script> -->
+</body>
+</html>

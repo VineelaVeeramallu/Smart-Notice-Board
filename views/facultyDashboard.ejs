@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<title></title>
+<style type="text/css">
+      .container{
+          display: grid;
+          height: 100vh;
+          grid-template-columns: repeat(6, 1fr);
+          grid-template-rows: 0.2fr 3.3fr ;
+          grid-template-areas:
+          "nav nav nav nav nav nav"
+          "sidebar sidebar main main main main"
+          
+      }
+      .material-symbols-outlined {
+        font-size: 2vh;
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+      body{
+            padding: 0px;
+            margin: 0px;
+            scroll-behavior: smooth;
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 3px;
+        }
+        #navbar{
+            background-color: #1B609D;
+            width: 100%;
+            height: 12vh;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-between;
+            color: aliceblue;
+            grid-area: nav;
+        }
+        #heading{
+            font-weight: 700 bold;
+            font-style: italic;
+            font-size: 7vh;
+            color: rgb(255, 255, 255);
+        }
+        #events_heading{
+            font-weight: 500 bold;
+            font-style: italic;
+            font-size: 5vh;
+            color:#1B609D;
+            text-align: center;
+        }
+        #events_input{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            left: 6vh;
+        }
+      #content{
+      /* background-color:DodgerBlue; */
+      grid-area: main;
+      display: flex;
+      flex-direction: column;
+                  justify-content: space-evenly;
+                  align-items: center;
+      }
+      #sidebar {
+      grid-area: sidebar;
+      background-color: skyblue;
+      /* display: flex;
+      flex-direction: column;
+                  justify-content: center;
+                  align-items: center; */
+      }
+      #event_in{
+            width: 30vh;
+            height: 4vh;
+            border:0;
+            outline:0;
+        }
+      #insert{
+            /* border:2px solid #1B609D; */
+            height: 4vh;
+            width: 15vh;
+            font-size: 20px;
+            /* border-radius: 7px; */
+            color: white;
+            background-color: #1B609D;
+            border: none;
+        }
+        li{
+          word-break: break-all;
+          font-size: 3vh;
+        }
+        .box{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .updateForm{
+            border: 2px solid black;
+            height: 15vh;
+            width: 100vh;
+        }
+        table{
+          width: 100vh;
+          height: 40vh;
+        }
+        
+      @media only screen and (max-width: 500px){
+      .container {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(7, auto);
+      grid-template-areas:
+      "nav"
+      "main"
+      "sidebar";
+      }
+    }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div id ="navbar">
+        <h1 id="heading" >&nbsp;&nbsp;Smart Notice Board</h1>
+        <h2>Vishnu Institute of Technology&nbsp;&nbsp;</h2>
+    </div>
+    <div id="content">
+      <table border="2" cellspacing="3" align="center" editable="true">
+        <h2>TIME TABLE</h2>
+        <tr>
+          <th align="center">S.No</th>
+          <th>Timing</th>
+          <th>Subject</th>
+          <th>Faculty's Message</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>9:00-9:50</td>
+          <td><%=sub1%></td>
+          <td><%=con1%></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>9:50-10:40</td>
+          <td><%=sub2%></td>
+          <td><%=con2%></td>
+          
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>11:00-11:50</td>
+          <td><%=sub3%></td>
+          <td><%=con3%></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>11:50-12:40</td>
+          <td><%=sub4%></td>
+          <td><%=con4%></td>
+          
+        </tr>
+        <tr>
+          <td colspan="5">L U N C H</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>1:40-2:30</td>
+          <td><%=sub5%></td>
+          <td><%=con5%></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>2:30-3:20</td>
+          <td><%=sub6%></td>
+          <td><%=con6%></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>3:20-4:10</td>
+          <td><%=sub7%></td>
+          <td><%=con7%></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>4:10-5:00</td>
+          <td><%=sub8%></td>
+          <td><%=con8%></td>
+        </tr>
+        
+      </table>
+
+      <div class="updateForm">
+        <center><h2>Update Time Table</h2></center>
+        <form method="post" action="/updateTimetable">
+          <input type="text" name="period" placeholder="Enter period you want to update">
+          <input type="text" name="subject" placeholder="Enter updated subject">
+          <input type="text" name="content" placeholder="Enter content">
+          <button>UPDATE</button>
+        </form>
+      </div>
+    </div>
+    <div id="sidebar">
+        <h1 id="events_heading">Events</h1>
+        <form id="events_input" method="post" action="/addEvent">
+            <input  id="event_in"type="text" placeholder="Enter event" name="events">
+            <button id="insert">Insert</button>
+        </form>
+        
+        <ul>
+          <% if (Array.isArray(list)) { %>
+            <% list.forEach(function(item) { %>
+              <li>
+                <div class="box">
+                  <%= item.events %>
+                <form action="/deleteEvent" method="post">
+                  <input type="hidden" name="eventId" value="<%= item.docID %>">
+                  <button type="submit"><span class="material-symbols-outlined">
+                    delete
+                    </span></button>
+                </form>
+                </div>
+                <form id = "editform" action="/updateEvent" method="post">
+                  <input type="hidden" name="eventId" value="<%= item.docID %>">
+                  <input class="edit" type="text" name="updatedEvent" placeholder="Edit event">
+                  <button class="edit_button" type="submit"><span class="material-symbols-outlined">
+                    edit
+                    </span></button>
+                </form>
+                
+              </li>
+            <% }); %>
+          <% } else { %>
+            <li>No events available</li>
+          <% } %>
+          
+        </ul>
+    </div>
+  </div>
+  <!-- <script src="/client.js"> -->
+  </script>
+</body>
+</html>
